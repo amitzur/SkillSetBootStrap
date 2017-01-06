@@ -1,0 +1,107 @@
+@font-face {
+    font-family: 'et-book';
+    src: url('et-book-roman-line-figures.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'et-book';
+    src: url('et-book-display-italic-old-style-figures.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'et-book';
+    src: url('et-book-bold-line-figures.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    line-height: 1.2;
+    font-family: 'et-book', Georgia, serif;
+}
+
+#root {
+    height: 100%;
+}
+
+.master-details {
+    display: flex;
+    height: 100%;
+}
+
+.master-details-master {
+    height: 100%;
+    flex: 0 0 300px;
+    border-right: 1px solid #ccc;
+    overflow: auto;
+}
+
+.master-details-details {
+    flex: 1 1 0px;
+    height: 100%;
+    overflow: auto;
+}
+
+.master-details-master > *.active { 
+    background: #ebebeb;
+}
+
+.img-wrap {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    
+    margin-right: 8px;
+}
+
+.img-wrap img.portrait {
+    max-width: 100%;
+}
+
+.img-wrap img.landscape {
+    max-height: 100%;
+}
+
+img { 
+    opacity: 0;
+}
+
+img.active {
+    opacity: 1;
+    transition: opacity 200ms;
+}
+
+p::first-line {
+    font-variant: small-caps;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.item {
+    padding: 16px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.president-short {
+    display: flex;
+    align-items: center;
+}

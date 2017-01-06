@@ -1,0 +1,27 @@
+{
+  "name": "SkillSetBootStrap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "images.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amitzur/SkillSetBootStrap.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amitzur/SkillSetBootStrap/issues"
+  },
+  "homepage": "https://github.com/amitzur/SkillSetBootStrap#readme",
+  "devDependencies": {
+    "browserify": "^13.3.0",
+    "connect": "^3.5.0",
+    "morgan": "^1.7.0",
+    "serve-static": "^1.11.1"
+  }
+}

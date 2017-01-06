@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>US Presidents</title>
+    <link rel="stylesheet" href="stylesheets/app.css">
+</head>
+<body>
+    <div id="root"></div>
+    <script type="x-template" id="president-short-template">
+        <div class="img-wrap">
+            <img src={{src}}>
+        </div>
+        <span>{{president}}</span>
+    </script>
+    <script type="x-template" id="president-template">
+        <div class="img-wrap">
+            <img src={{src}}>
+        </div>
+        <span>{{president}}</span>
+        <p>{{text}}</p>
+    </script>
+    <script src="bundle.js"></script>
+</body>
+</html>
