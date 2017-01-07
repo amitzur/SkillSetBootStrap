@@ -40,8 +40,19 @@ body {
     margin: 0;
 }
 
+:root {
+    --header-height: 56px;
+    --header-color: #4285f4;
+}
+
+header {
+    height: var(--header-height);
+    background: var(--header-color);
+    box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+}
+
 #root {
-    height: 100%;
+    height: calc(100% - var(--header-height));
 }
 
 .master-details {
