@@ -10,13 +10,13 @@ window.addEventListener("DOMContentLoaded", e => {
         
         EventBus.on("president/click", president => {
             detailsPage.setData(president);
-            detailsPage.show("slide-left");
+            detailsPage.show("slideleft");
 
             // TODO add back button to header
         });
         
         EventBus.on("president/back", () => {
-            listPage.show("slide-right");
+            listPage.show("slideright");
 
             // TODO remove back button from header
         });

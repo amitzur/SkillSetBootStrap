@@ -1,5 +1,5 @@
 let $ = require("./xQuery");
-let Transition = require("./transition");
+let transition = require("./transition");
 
 function Page(options) {
     let el = $.create("div", { id: options.id, className: "page" });
@@ -12,12 +12,21 @@ function Page(options) {
     };
 }
 
-function show(transition) {
-    let to = this;
-    let from = Page.activePage;
-    Transition(from, to, transition).then(() => {
-        Page.activePage = to;
-    });
+function show(transitionName, onbeforetransition) {
+    if (transitionName) {
+        return new Promise(resolve => {
+            let to = this;
+            let from = Page.activePage;
+            transition(from, to, transitionName, onbeforetransition).then(() => {
+                Page.activePage = to;
+                resolve();
+            });
+        });
+    } else {
+        this.el.classList.add("active");
+        Page.activePage = this;
+        return Promise.resolve();
+    }
     
 }
 
