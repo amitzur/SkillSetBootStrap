@@ -1,0 +1,23 @@
+.img-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.img-wrap img.portrait {
+    max-width: 100%;
+}
+
+.img-wrap img.landscape {
+    max-height: 100%;
+}
+
+img {
+    opacity: 0;
+}
+
+img.active {
+    opacity: 1;
+    transition: opacity 200ms;
+}

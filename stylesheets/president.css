@@ -1,0 +1,37 @@
+.president-short {
+    display: flex;
+    align-items: center;
+}
+
+.president-short .img-wrap {
+    width: 60px;
+    height: 60px;
+    margin-right: 8px;
+}
+
+.president {
+    max-width: 640px;
+    margin: 3rem auto 0;
+}
+
+.president .meta {
+    display: flex;
+}
+
+.president .img-wrap {
+    float: left;
+    margin-right: 16px;
+    margin-bottom: 16px;
+}
+
+.president p {
+    animation-delay: 400ms;
+    text-align: justify;
+}
+
+.president p::first-line {
+    font-variant: small-caps;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    line-height: 1.5;
+}

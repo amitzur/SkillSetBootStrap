@@ -1,26 +1,8 @@
 @import "animation.css";
-
-@font-face {
-    font-family: 'et-book';
-    src: url('../fonts/et-book-roman-line-figures.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'et-book';
-    src: url('../fonts/et-book-display-italic-old-style-figures.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'et-book';
-    src: url('../fonts/et-book-bold-line-figures.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
+@import "fonts.css";
+@import "image.css";
+@import "master-details.css";
+@import "president.css";
 
 * {
     box-sizing: border-box;
@@ -49,102 +31,10 @@ header {
     height: var(--header-height);
     background: var(--header-color);
     box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+    z-index: 1;
+    position: relative;
 }
 
 #root {
     height: calc(100% - var(--header-height));
-}
-
-.master-details {
-    display: flex;
-    height: 100%;
-}
-
-.master-details-master {
-    height: 100%;
-    flex: 0 0 300px;
-    border-right: 1px solid #ccc;
-    overflow: auto;
-}
-
-.master-details-details {
-    flex: 1 1 0px;
-    height: 100%;
-    overflow: auto;
-}
-
-.master-details-master > *.active { 
-    background: #ebebeb;
-}
-
-.img-wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-.img-wrap img.portrait {
-    max-width: 100%;
-}
-
-.img-wrap img.landscape {
-    max-height: 100%;
-}
-
-img { 
-    opacity: 0;
-}
-
-img.active {
-    opacity: 1;
-    transition: opacity 200ms;
-}
-
-p::first-line {
-    font-variant: small-caps;
-    font-size: 1.5rem;
-    letter-spacing: 0.1rem;
-    line-height: 1.5;
-    text-align: justify;
-}
-
-.item {
-    padding: 16px;
-    border-bottom: 1px solid #ebebeb;
-    cursor: pointer;
-}
-
-.president-short {
-    display: flex;
-    align-items: center;
-}
-
-.president-short .img-wrap {
-    width: 60px;
-    height: 60px;
-    margin-right: 8px;
-}
-
-.president {
-    max-width: 640px;
-    margin: 3rem auto 0;
-}
-
-.president .meta {
-    display: flex;
-}
-
-.president .img-wrap {
-    float: left;
-    margin-right: 16px;
-    margin-bottom: 16px;
-}
-
-.president .title {
-    
-}
-
-.president p {
-    animation-delay: 400ms;
 }

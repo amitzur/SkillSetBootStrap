@@ -1,0 +1,37 @@
+.master-details {
+    display: flex;
+    height: 100%;
+}
+
+.master-details-master {
+    height: 100%;
+    flex: 0 0 300px;
+    border-right: 1px solid #ccc;
+    overflow: auto;
+}
+
+.master-details-master > .item {
+    padding: 16px;
+    border-bottom: 1px solid #ebebeb;
+    cursor: pointer;
+}
+
+.master-details-master > .item.active {
+    background: #ebebeb;
+}
+
+.master-details-details {
+    flex: 1 1 0px;
+    height: 100%;
+    overflow: auto;
+}
+
+.master-details-details .placeholder {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    letter-spacing: 0.1em;
+    font-size: 1.7rem;
+}
