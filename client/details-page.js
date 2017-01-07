@@ -8,6 +8,10 @@ function DetailsPage(options) {
     page.el.addEventListener("click", e => {
         EventBus.trigger("president/back");
     });
+    
+    page.el.addEventListener("scroll", e => {
+        EventBus.trigger("president/scroll", page.el.scrollTop);
+    });
 
     let ret = {
         page,

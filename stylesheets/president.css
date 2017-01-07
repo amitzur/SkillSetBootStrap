@@ -15,8 +15,24 @@
     margin: 3rem auto 0;
 }
 
-.president .meta {
+.president-meta {
     display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    border-bottom: 1px solid #ebebeb;
+    opacity: 0;
+    background: white;
+    align-items: center;
+    padding: 8px 16px;
+}
+
+.president-meta .img-wrap {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    margin-right: 8px;
 }
 
 .president .img-wrap {
