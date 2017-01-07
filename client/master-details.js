@@ -24,10 +24,15 @@ function init(mountAt) {
 function render() {
     
     this.options.data.forEach((item, i) => {
-        let $item = $.create("div", { className: "item" }, [ this.options.masterTemplate(item) ]);
+        let $item = $.create("div", { className: "item animated fade-up", style: "animation-delay:" + ((i+1)*100) + "ms" }, [ this.options.masterTemplate(item) ]);
 
         $item.addEventListener("click", e => {
             this.setSelected(i);
+        });
+        
+        $item.addEventListener("animationend", e => {
+            $item.classList.remove("animated");
+            $item.classList.remove("fade-up");
         });
     
         this.$(".master-details-master").appendChild($item);

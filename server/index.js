@@ -15,7 +15,7 @@ function bundle() {
 }
 
 let port = 3000;
-let b = browserify("app.js", { debug: true });
+let b = browserify("client/app.js", { debug: true });
 bundle();
 
 let app = connect();
@@ -28,7 +28,7 @@ http.createServer(app).listen(port, function() {
     log("http server listening on port " + port);
 });
 
-fs.watch(".", function(type, filename) {
+fs.watch("client", function(type, filename) {
     log(type + ": " + filename);
     if (filename !== "bundle.js") {
         bundle();
