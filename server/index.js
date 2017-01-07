@@ -6,16 +6,22 @@ let serveStatic = require("serve-static");
 let morgan = require("morgan");
 let log = require("./log");
 
-function bundle() {
-    b.bundle().on("error", function(err) {
+function doBundle(br, filename) {
+    br.bundle().on("error", function(err) {
         log("error in bundle: " + err);
-    }).pipe(fs.createWriteStream("bundle.js")).on("close", function() {
-        log("bundle created");
+    }).pipe(fs.createWriteStream(filename)).on("close", function() {
+        log("bundle created: " + filename);
     });
+}
+
+function bundle(br, filename) {
+    doBundle(b, "bundle.js");
+    doBundle(bMobile, "bundle-mobile.js");
 }
 
 let port = 3000;
 let b = browserify("client/app.js", { debug: true });
+let bMobile = browserify("client/mobile.js", { debug: true });
 bundle();
 
 let app = connect();
@@ -30,7 +36,7 @@ http.createServer(app).listen(port, function() {
 
 fs.watch("client", function(type, filename) {
     log(type + ": " + filename);
-    if (filename !== "bundle.js") {
+    if (filename !== "bundle.js" && filename !== "bundle-mobile.js") {
         bundle();
     }
 });

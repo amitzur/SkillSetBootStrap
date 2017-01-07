@@ -2,4 +2,5 @@
 myFirstWeb.iml
 presidents.json
 bundle.js
+bundle-mobile.js
 node_modules/

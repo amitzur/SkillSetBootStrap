@@ -1,9 +1,10 @@
 let $ = require("./xQuery");
 
 
-function MasterDetails(el, options) {
-    this.el = init(el);
+function MasterDetails(mountAt, options) {
+    let el = init(mountAt);
     return {
+        el,
         render,
         setSelected,
         showDetails,
@@ -23,6 +24,7 @@ function init(mountAt) {
     ]);
     
     mountAt.appendChild(el);
+    return el;
 }
 
 function render() {

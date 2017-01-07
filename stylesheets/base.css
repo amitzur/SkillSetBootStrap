@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+html {
+    font-size: 18px;
+    line-height: 1.2;
+    font-family: 'et-book', Georgia, serif;
+}
+
+body {
+    margin: 0;
+}
+
+:root {
+    --header-height: 56px;
+    --header-color: #4285f4;
+}
+
+header {
+    height: var(--header-height);
+    background: var(--header-color);
+    box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+    z-index: 1;
+    position: relative;
+}
+
+#root {
+    height: calc(100% - var(--header-height));
+    position: relative;
+}
