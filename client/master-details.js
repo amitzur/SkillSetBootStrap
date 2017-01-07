@@ -17,7 +17,9 @@ function MasterDetails(el, options) {
 function init(mountAt) {
     let el = $.create("div", { className: "master-details" }, [
         $.create("div", { className: "master-details-master" }),
-        $.create("div", { className: "master-details-details" })
+        $.create("div", { className: "master-details-details" }, [
+            $.create("div", { className: "placeholder", innerHTML: "Choose item on the right" })
+        ])
     ]);
     
     mountAt.appendChild(el);
@@ -60,7 +62,7 @@ function showDetails(index) {
 
 function hideDetails() {
     return new Promise((resolve, reject) => {
-        if (this.$(".master-details-details").children.length) {
+        if (this.$(".master-details-master .item.active")) {
             this.$(".master-details-details .img-wrap").classList.add("fade-out-left");
             this.$(".master-details-details p").classList.add("fade-out-down");
             this.$(".master-details-details p").addEventListener("animationend", e => {
