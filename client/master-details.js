@@ -19,7 +19,7 @@ function init(mountAt) {
     let el = $.create("div", { className: "master-details" }, [
         $.create("div", { className: "master-details-master" }),
         $.create("div", { className: "master-details-details" }, [
-            $.create("div", { className: "placeholder", innerHTML: "Choose item on the right" })
+            $.create("div", { className: "placeholder", innerHTML: "Choose item on the left" })
         ])
     ]);
     
